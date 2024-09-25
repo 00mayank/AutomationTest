@@ -4,16 +4,19 @@ This project contains End-to-End (E2E) tests for Amazon and Flipkart product sea
 
 ## Folder Structure
 
-- `frontendTesting/`
+- `cypress/e2e/FrontendTesting/`
   - Contains Cypress E2E test files for testing product searches on Amazon and Flipkart.
 
   - `AmazonProductSearch.cy.js`: Automates a product search on Amazon India and validates product details.
   - `flipkartProductSearch.cy.js`: Automates a product search on Flipkart and validates product details.
 
-- `backendTesting/`
+- `cypress/e2e/BackendTesting/`
   - Contains API testing scripts using Cypress for testing placeholder APIs.
 
   - `PlaceHolderApiTesting.cy.js`: Tests various HTTP methods (GET, POST, PUT, DELETE) and validates the responses.
+
+- `cypress/fixtures/`
+  - Contains json files used to featch product details in frontend e2e testing. 
 
 ## Test Descriptions
 
@@ -36,6 +39,7 @@ This project contains End-to-End (E2E) tests for Amazon and Flipkart product sea
 
 1. **Placeholder API Testing** (`PlaceHolderApiTesting.cy.js`)
    - This file tests various HTTP operations against the `https://jsonplaceholder.typicode.com/` API. The tests cover **positive**, **negative**, **edge cases**, and **performance tests**.
+   - [JSONPlaceholder API](https://jsonplaceholder.typicode.com/posts), a free REST API used for testing and prototyping.
 
 #### Positive Test Cases
    - **GET Call**: Retrieves a post using a valid post ID and checks for a 200 OK response, along with validating content like `id`, `title`, and response headers.
@@ -56,6 +60,17 @@ This project contains End-to-End (E2E) tests for Amazon and Flipkart product sea
 
 #### API Chaining
    - **API Chaining Test**: This test demonstrates chaining of API calls. It first retrieves a post and then uses its ID to fetch related comments, validating the total number of comments in the second call which should . This shows how responses from one API call can be used as inputs for subsequent calls.
+
+### Custom Cypress Commands (`commands.js`)
+
+The project uses custom Cypress commands to simplify API request handling. These commands are defined in the `support/commands.js` file.
+
+### Available Custom Commands
+
+1. **createPost(postId, postData)**: Sends a POST request to create a new post.
+2. **updatePost(postId, postData)**: Sends a PUT request to update an existing post.
+3. **deletePost(postId)**: Sends a DELETE request to delete a post.
+4. **getPost(postId)**: Sends a GET request to retrieve a post.
 
 ### Installation
 
@@ -85,9 +100,9 @@ To run these tests, you will need to have the following installed:
 ### Running Tests
 #### To run the frontend tests for Amazon and Flipkart, use the Cypress Test Runner UI to execute:
 
-  frontendTesting/AmazonProductSearch.cy.js: For E2E testing on Amazon.
-  frontendTesting/flipkartProductSearch.cy.js: For E2E testing on Flipkart.
+  FrontendTesting/AmazonProductSearch.cy.js: For E2E testing on Amazon.
+  FrontendTesting/flipkartProductSearch.cy.js: For E2E testing on Flipkart.
 #### To run backend tests (API tests):
 
-  Open the Cypress Test Runner and run backendTesting/PlaceHolderApiTesting.cy.js.
+  Open the Cypress Test Runner and run BackendTesting/PlaceHolderApiTesting.cy.js.
 
