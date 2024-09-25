@@ -59,7 +59,7 @@ This project contains End-to-End (E2E) tests for Amazon and Flipkart product sea
    - **GET Call Performance**: Ensures that retrieving a post returns a response within 1000 milliseconds (1 second), validating system performance under normal conditions.
 
 #### API Chaining
-   - **API Chaining Test**: This test demonstrates chaining of API calls. It first retrieves a post and then uses its ID to fetch related comments, validating the total number of comments in the second call which should . This shows how responses from one API call can be used as inputs for subsequent calls.
+   - **API Chaining Test**: This test demonstrates chaining of API calls. It first retrieves a post and then uses its ID to fetch related comments, validating the total number of comments in the second call which should be 5 in total. This shows how responses from one API call can be used as inputs for subsequent calls.
 
 ### Custom Cypress Commands (`commands.js`)
 
