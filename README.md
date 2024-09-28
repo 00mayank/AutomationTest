@@ -88,13 +88,14 @@ To run these tests, you will need to have the following installed:
 
 2. Navigate to the project directory and install the dependencies:
 
-  ```bash
-  cd <project-directory>
-  npm install
+    ```bash
+    cd <project-directory>
+    npm install
 
 3. Open Cypress test runner:
-  ```bash
-  npx cypress open
+
+    ```bash
+    npx cypress open
 
 4. Select and run the desired test suite.
 
